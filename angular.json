@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "doc/shipping",
+            "outputPath": "docs/shipping",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -94,6 +94,9 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }
