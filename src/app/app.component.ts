@@ -34,7 +34,7 @@ export class AppComponent {
 
   calculate(price: number) {
     let summary = 0;
-    const extra = this.canChargeExtra() && price < 2000 ? 50 : 0;
+    const extra = false && this.canChargeExtra() && price < 2000 ? 50 : 0;
     const cost = Math.ceil((price * this.yen.rate + this.yen.ship) / 5) * 5;
     summary =
       Math.ceil(((265 / 215) * cost + Math.ceil((100 * cost) / 215 / 10)) / 5) *
