@@ -28,13 +28,13 @@ export class AppComponent {
 
   canChargeExtra() {
     const currentDate = dayjs(new Date()).startOf('date');
-    const calculateDate = dayjs('03/01/2024', 'MM/DD/YYYY').startOf('date');
+    const calculateDate = dayjs('04/10/2024', 'MM/DD/YYYY').startOf('date');
     return currentDate.isAfter(calculateDate);
   }
 
   calculate(price: number) {
     let summary = 0;
-    const extra = false && this.canChargeExtra() && price < 2000 ? 50 : 0;
+    const extra = this.canChargeExtra() && price < 2000 ? 50 : 0;
     const cost = Math.ceil((price * this.yen.rate + this.yen.ship) / 5) * 5;
     summary =
       Math.ceil(((265 / 215) * cost + Math.ceil((100 * cost) / 215 / 10)) / 5) *
